@@ -1,7 +1,7 @@
 # Dockerized Machine Learning Rest API
 ---------------------
 
-A dockerized XGBoost model:
+Example of turning an [XGBoost](http://xgboost.readthedocs.io/) model (built [here]https://github.com/mdh266/NYCBuildingEnergyUse)) using [Flask](https://flask.palletsprojects.com/en/1.1.x/), [Docker](https://www.docker.com/) and [Google App Engine](https://cloud.google.com/appengine).
 
 ## Local Use
 ---------------
