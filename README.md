@@ -1,7 +1,7 @@
 # Dockerized Machine Learning Rest API
 ---------------------
 
-Example of turning an [XGBoost](http://xgboost.readthedocs.io/) model (built [here]https://github.com/mdh266/NYCBuildingEnergyUse)) using [Flask](https://flask.palletsprojects.com/en/1.1.x/), [Docker](https://www.docker.com/) and [Google Cloud Run:](hhttps://cloud.google.com/run).
+Example of turning an [XGBoost](http://xgboost.readthedocs.io/) model (built [here](https://github.com/mdh266/NYCBuildingEnergyUse)) using [Flask](https://flask.palletsprojects.com/en/1.1.x/), [Docker](https://www.docker.com/) and [Google Cloud Run](hhttps://cloud.google.com/run).
 
 ## Local Use
 ---------------
