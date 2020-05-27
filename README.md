@@ -1,7 +1,7 @@
 # Dockerized Machine Learning Rest API
 ---------------------
 
-Example of turning an [XGBoost](http://xgboost.readthedocs.io/) model (built [here]https://github.com/mdh266/NYCBuildingEnergyUse)) using [Flask](https://flask.palletsprojects.com/en/1.1.x/), [Docker](https://www.docker.com/) and [Google App Engine](https://cloud.google.com/appengine).
+Example of turning an [XGBoost](http://xgboost.readthedocs.io/) model (built [here]https://github.com/mdh266/NYCBuildingEnergyUse)) using [Flask](https://flask.palletsprojects.com/en/1.1.x/), [Docker](https://www.docker.com/) and [Google Cloud Run:](hhttps://cloud.google.com/run).
 
 ## Local Use
 ---------------
@@ -29,17 +29,16 @@ From Python:
 	result.json() # [0.0031427741050720215, 0.007205158472061157]
 
 
-## Deploying to Google App Engine:
+## Deploying to Google Cloud Run:
 ------------------------
-Build image 
+Build image on Google Cloud
 
-	docker build -t mlapp app
+	cd app
 
-Push to Google Container registry:
-
-	docker tag mlapp gcr.io/<project-id>/mlapp:latest
-	docker push gcr.io/<project-id>/mlapp:latest
+	gcloud builds submit --tag gcr.io/<project-id>/mlapp
 
 Deploy to Google Engine App:
 
-	docker app deploy --image-url=gcr.io/<project-id>/mlapp:latest
+	gcloud run deploy --image gcr.io/<project-id>/mlapp --platform managed
+
+

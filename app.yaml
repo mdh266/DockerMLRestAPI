@@ -1,5 +1,0 @@
-runtime: custom
-env: flex
-service: mlapp
-env_variables: 
-  DISABLE_NGINX: "true"
