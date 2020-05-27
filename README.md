@@ -31,13 +31,13 @@ From Python:
 
 ## Deploying to Google Cloud Run:
 ------------------------
-Build image on Google Cloud
+Build image on Google Cloud:
 
 	cd app
 
 	gcloud builds submit --tag gcr.io/<project-id>/mlapp
 
-Deploy to Google Engine App:
+Deploy to Google Cloud Run:
 
 	gcloud run deploy --image gcr.io/<project-id>/mlapp --platform managed
 
