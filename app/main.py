@@ -1,33 +1,31 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request
+import json
 
 import joblib
 import pandas as pd
 import xgboost as xgb
 
+
 app = Flask(__name__)
 
-
-@app.route("/")
-def hello():
-  return "Hello World!"
 
 @app.route('/predict', methods=['POST'])
 def predict():
   if request.method == 'POST':
     try:
-      json = request.json
+      data = request.json
 
-      df   = pd.DataFrame(columns=json['columns'],
-                          data=json['data'])
+      df   = pd.DataFrame(columns=data['columns'],
+                          data=data['data'])
 
       model = joblib.load("model/xgbmodel.joblib")
 
       result = model.predict(xgb.DMatrix(df))
       
-      return jsonify(str(list(result)))
+      return json.dumps([float(res) for res in result])
 
     except:
-      return jsonify({'trace': traceback.format_exc()})
+      return json.dumps({'trace': traceback.format_exc()})
 
 
 if __name__ == "__main__":
